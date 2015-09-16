@@ -6,6 +6,7 @@ app.controller("TweetCtrl", ($scope, accountService) => {
 	accountService.add("@Acct1");
 	accountService.add("@Acct2");
 	accountService.add("@Acct3");
+	accountService.add("@Acct3"); // Duplicates are ignored
 
 	$scope.accountList = accountService.getAll();
 });
@@ -17,7 +18,9 @@ app.service("accountService", function() {
 	};
 
 	this.add = function(username) {
-		accounts.push(username);
+		if(accounts.indexOf(username) === -1){
+			accounts.push(username);
+		}
 	};
 });
 
