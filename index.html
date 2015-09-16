@@ -28,10 +28,9 @@
             <button class="btn btn-primary" ng-click="tweetAs()">Tweet</button>
           </div>
           <div class="col-sm-8">
-            <select id="account-select" ng-model="fromAcount" class="form-control">
-              <option>Select Account</option>
-              <option>@codinghouse</option>
-              <option>@agilelabs</option>
+            <select id="account-select" ng-model="fromAccount" class="form-control" ng-change="test()">
+                <option value='' disabled>- Choose an Account -</option>
+              <option ng-repeat="account in accountList">{{account}}</option>
             </select>
           </div>
         </div>
