@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CodingHouse Template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
 
   </head>
-  <body>
-
+  <body ng-app="team-tweet">
     <div class="container">
       <div class="row">
         <ul class="nav nav-tabs center">
@@ -17,27 +17,26 @@
           <li role="presentation"><a href="#">Authorized Accounts</a></li>
         </ul>
       </div>
-      <div id="tweet" class="row">
-        <div class="col-sm-12">
-          <textarea id="tweetTemplate" rows="10" class="form-control"></textarea>
+      <div ng-controller="TweetCtrl">
+        <div id="tweet" class="row">
+          <div class="col-sm-12">
+            <textarea id="tweetTemplate" ng-model="tweetText" rows="10" class="form-control"></textarea>
+          </div>
         </div>
-      </div>
-      <div id="buttons" class="row">
-        <div class="col-sm-4">
-          <button class="btn btn-primary">Tweet</button>
-        </div>
-        <div class="col-sm-8">
-          <select id="account-select" class="form-control">
-            <option>Select Account</option>
-            <option>@codinghouse</option>
-            <option>@agilelabs</option>
-          </select>
+        <div id="buttons" class="row">
+          <div class="col-sm-4">
+            <button class="btn btn-primary" ng-click="tweetAs()">Tweet</button>
+          </div>
+          <div class="col-sm-8">
+            <select id="account-select" ng-model="fromAcount" class="form-control">
+              <option>Select Account</option>
+              <option>@codinghouse</option>
+              <option>@agilelabs</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
     <script src="dist/bundle.js"></script>
   </body>

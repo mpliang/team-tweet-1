@@ -1,20 +1,8 @@
-let hot = "HOT";
-console.log(`ES2015 is ${hot}`);
+import authorizeGuests from "./authorize";
 
-let authorizeGuests = () => {
-  if ( localStorage["firebase:session::teamtweet15"] ) {
-    return;
-  }
+let app = angular.module("team-tweet", []);
 
-  var ref = new Firebase("https://teamtweet15.firebaseio.com");
-  ref.authWithOAuthPopup("twitter", function(error, authData) {
-    if (error) {
-      alert("Login Failed!", error);
-    } else {
-      alert("Authenticated successfully with payload:", authData);
-    }
-  });
-};
-
+app.controller("TweetCtrl", () => {
+});
 
 authorizeGuests();
