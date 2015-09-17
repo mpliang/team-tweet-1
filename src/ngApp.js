@@ -10,5 +10,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/home.html',
       controller: "TweetCtrl"
     })
+    .state('accounts', {
+      url: '/accounts',
+      templateUrl: 'templates/accounts.html',
+      controller: "AccountsCtrl"
+    })
 
 });
