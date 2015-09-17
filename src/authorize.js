@@ -1,9 +1,9 @@
 export default () => {
-  if ( localStorage["firebase:session::teamtweet15"] ) {
+  if ( localStorage["firebase:session::team-tweets"] ) {
     return;
   }
 
-  var ref = new Firebase("https://teamtweet15.firebaseio.com");
+  var ref = new Firebase("https://team-tweets.firebaseio.com/");
   ref.authWithOAuthPopup("twitter", function(error, authData) {
     if (error) {
       alert("Login Failed!", error);

@@ -7,12 +7,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'templates/home.html',
+      templateUrl: '/src/templates/home.html',
       controller: "TweetCtrl"
     })
     .state('accounts', {
       url: '/accounts',
-      templateUrl: 'templates/accounts.html',
+      templateUrl: '/src/templates/accounts.html',
       controller: "AccountsCtrl"
     })
 

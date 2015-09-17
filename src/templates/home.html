@@ -1,7 +1,7 @@
-<div>
+<div ng-controller="TweetCtrl">
   <div id="tweet" class="row">
     <div class="col-sm-12">
-      <textarea id="tweetTemplate" ng-model="data.tweetText" rows="10" class="form-control"></textarea>
+      <textarea id="tweetTemplate" ng-model="tweetText" rows="10" class="form-control"></textarea>
     </div>
   </div>
   <div id="buttons" class="row">
@@ -9,7 +9,7 @@
       <button class="btn btn-primary" ng-click="tweetAs()">Tweet</button>
     </div>
     <div class="col-sm-8">
-      <select id="account-select" ng-model="data.fromAccount" class="form-control" ng-change="test()">
+      <select id="account-select" ng-model="fromAcount" class="form-control">
         <option value='' disabled>- Choose an Account -</option>
         <option ng-repeat="account in accountList">{{account}}</option>
       </select>
